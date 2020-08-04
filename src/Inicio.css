@@ -1,0 +1,107 @@
+.mainInicio {
+    min-height: 70vh;
+}
+
+.slogan h2 {
+    margin-top: 0;
+}
+
+.imagenDesktop {
+    display: none;
+}
+
+.imagenMobile {
+    display: block;
+    background-image: url('imagenes/imagenMobile.png');
+    background-repeat: no-repeat;
+}
+
+.slogan {
+    position: relative;
+    top: 60px;
+    right: 100px;
+    left: 30px;
+    color: white;
+    padding-left: 5%;
+    width: 200px;
+}
+
+.slogan p {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.nuestrosProductos {
+    display: flex;
+    position: relative;
+    color: white;
+    left: 125px;
+    font-size: 13px;
+    padding-top: 125px;
+    padding-bottom: 15px;
+}
+
+.nuestrosProductos img {
+    width: 23px;
+    height: 20px;
+}
+
+.nuestrosProductos p {
+    margin-right: 2.5%;
+}
+
+.containerFlecha {
+    position: relative;
+}
+
+.containerFlecha img {
+    position: absolute;
+    top: 4px;
+}
+
+
+@media (min-width: 320px) {
+    .imagenMobile {
+        display: block;
+        background-image: url('imagenes/imagenMobile.png');
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .nuestrosProductos {
+        left: 0px;
+        padding-left: 42%;
+    }
+}
+
+@media (min-width: 768px) {
+    .imagenMobile {
+        display: none;
+    }
+    .imagenDesktop {
+        display: block;
+        background-image: url('imagenes/imagenDesktop.png');
+        background-position: 80%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .slogan {
+        position: relative;
+        top: 50px;
+        right: 0px;
+        padding-left: 5%;
+        width: 300px;
+    }
+    /* .ourProducts {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        color: white;
+        font-size: 13px;
+        padding-top: 150px;
+        padding-left: 45%;
+        padding-bottom: 20px;
+    } */
+}

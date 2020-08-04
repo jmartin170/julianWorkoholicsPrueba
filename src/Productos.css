@@ -1,0 +1,139 @@
+h5, p {
+    margin: 0;
+}
+
+p {
+    font-size: 12px;
+}
+
+h4 {
+    width: 350px;
+    margin: auto;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.productos {
+    margin: 10px;
+}
+
+.productosUp, .productosDown {
+    position: relative;
+    width: 350px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.productosUp {
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.producto1, .producto2 {
+    display: flex;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.producto1.hide, .producto2.hide {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.imagenIphone, .tituloProducto, .imagenIphone2, .tituloProducto2 {
+    transition-duration: .8s;
+    transition-property: opacity;
+    opacity: 1;
+    z-index: 0;
+}
+
+.imagenIphone.hide, .tituloProducto.hide, .imagenIphone2.hide, .tituloProducto2.hide {
+    z-index: -1;
+    opacity: 0;
+}
+
+.producto1 img, .producto2 img {
+    width: 100%;
+    height: auto;
+}
+
+.colores {
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 110px;
+}
+
+.circuloColor {
+    width: 20px;
+}
+
+.circuloColor2 {
+    width: 20px;
+}
+
+.btnColor {
+    border-radius: 50%;
+    border: none;
+    color: white;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.botonesColor input {
+    transition: .5s ease transform;
+}
+
+.botonesColor input:hover {
+    transition: .8s ease border ;
+    transform: scale(1.2);
+ ;
+}
+
+input:checked {
+    border-radius: 50%;
+    border: rgb(2, 1, 48) 1px solid;
+}
+
+input::after{
+    transition: .4s ease all;
+}
+
+.colorSilver {
+    background-color: silver;
+}
+
+.colorGold {
+    background-color: gold;
+}
+
+@media (min-width: 768px) {
+    h4 {
+        margin-left: 5%;
+        padding-left: 0px;
+        padding-top: 50px;
+    }
+    .productos {
+        display: flex;
+        margin-left: 4%;
+        margin-right: 4%;
+        margin-top: 1.5%;
+        padding-bottom: 50px;
+    }
+    .productosUp, .productosDown {
+        margin: 10px;
+    }
+    .productosUp {
+        border-bottom: none;
+    }
+    .producto1, .producto2 {
+        border: 1px solid rgb(216, 216, 216);
+        display: flex;
+        padding: 10px 5px;
+        position: relative;
+    }
+}

@@ -1,0 +1,125 @@
+    .encabezado {
+        background-color: rgb(51, 51, 51);
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    .titulo {
+        font-weight: 400;
+        letter-spacing: 0.3em;
+        font-size: 25px;
+        padding-left: 35px;
+        position: relative;
+        z-index: 1;
+    }
+    .circulogo {
+        height: 40px;
+        width: 40px;
+        background-color: rgb(97, 129, 219);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 0;
+        left: 15px;
+    }
+    .signIn {
+        display: none;
+    }
+
+    .hamburger {
+        padding-right: 10px;
+        cursor: pointer;
+        transition: .3s ease transform;
+    }
+
+    .hamburger:hover {
+        transform: scale(1.2);
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+    .hamburger.open .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.open .line2 {
+        opacity: 0;
+    }
+    .hamburger.open .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .navylogin {
+        position: fixed;
+        top: 69px;
+        bottom: -1px;
+        width: 100%;
+        background-color: rgb(51, 51, 51, 0.98);
+        z-index: 2;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+    .navylogin.open {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    .navBar {
+        width: 100%;
+        z-index: 2;
+    }
+
+    .navBar a {
+        cursor: pointer;
+    }
+
+    .navBar li {
+        transition: .3s ease transform;
+    }
+
+.navBar li:hover {
+        transform: scale(1.2);
+    }
+    .navBar ul {
+        display: block;
+        text-align: center;
+        padding-left: 0;
+        padding-top: 140px;
+        padding-bottom: 140px;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+        padding: 25px;
+        font-size: 35px;
+        font-weight: 600;
+    }
+
+
+@media (min-width: 768px) {
+    .hamburger, .hamburger.open, .navylogin, .navylogin.open {
+        display: none;
+    }
+    .signIn {
+        display: inline;
+        padding-right: 6%;
+        font-weight: 600;
+        color: rgb(97, 129, 219)
+    }
+
+    .titulo {
+        padding-left: 66px;
+    }
+
+    .circulogo {
+        left: 45px;
+    }
+}

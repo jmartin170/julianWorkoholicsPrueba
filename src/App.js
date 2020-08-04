@@ -1,25 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
+import Login from './Login';
+import Inicio from './Inicio'
+
+
+// Puesto que en la versión móvil no existe la ruta '/login', creamos una función que se actualiza al cambiar el tamaño de la pantalla. Al tener esta una anchura menor de 768px en lugar de dibujarse el componente Login se dibuja el componente Inicio //
+
+function UseWindowSize() {
+
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+
+  });
+
+  useEffect(() => {
+
+    function handleResize() {
+
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+
+  }, []);
+
+  return (
+
+    windowSize.width < 768 ? <Inicio /> : <Login />
+  );
+
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <BrowserRouter>
+      <Header
+      />
+      <Route exact path='/'>
+        <Inicio />
+      </Route>
+      <Route path='/inicio'>
+        <Inicio />
+      </Route>
+      <Route path='/login'>
+        <UseWindowSize />
+      </Route>
+      <Footer />
+    </BrowserRouter>
+
   );
 }
 
