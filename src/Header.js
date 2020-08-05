@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import Login from './Login';
@@ -40,15 +40,34 @@ function Header(props) {
 
     }
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     // constante JSX: pintamos el menú para la versión móvil//
 
     const menuMovilJSX =
         <>
-            <div className={hamburguesa} onClick={cambioMenu}>
+            {scrollPosition === 0?<div className={hamburguesa} onClick={cambioMenu}>
                 <div className="line1"></div>
                 <div className="line2"></div>
                 <div className="line3"></div>
-            </div>
+            </div>:<div className='hamburgerStop'>
+                <div className="line1"></div>
+                <div className="line2"></div>
+                <div className="line3"></div>
+            </div>}
             <div className={estadoMenu}>
                 <nav className='navBar' style={estadoBar}>
                     <ul>

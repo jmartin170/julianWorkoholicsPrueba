@@ -31,6 +31,19 @@
         display: none;
     }
 
+    .hamburgerStop {
+        padding-right: 10px;
+        cursor: pointer;
+       
+    }
+
+    .hamburgerStop div {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+    }
+
     .hamburger {
         padding-right: 10px;
         cursor: pointer;
