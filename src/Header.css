@@ -118,7 +118,7 @@
 
 
 @media (min-width: 768px) {
-    .hamburger, .hamburger.open, .navylogin, .navylogin.open {
+    .hamburger, .hamburger.open, .navylogin, .navylogin.open, .hamburgerStop {
         display: none;
     }
     .signIn {
